@@ -48,7 +48,7 @@ Työ toteutetaan käyttäen seuraavia välineitä:
 
 ## 3 Arduino IDE  
   
-Arduino IDE (Integrated Development Environment) on ohjelmisto, jota voidaan käyttää koodin kirjoittamiseen, kääntämiseen ja lataamiseen Arduino-laitteisiin. Ohjelmointikielenä toimii C++ ohjelmointikieleen pohjautuva kieli.  
+Arduino IDE (Integrated Development Environment) on ohjelmisto, jota voidaan käyttää koodin kirjoittamiseen, kääntämiseen ja lataamiseen Arduino-kehitysalustalle. Ohjelmointikielenä toimii C++ ohjelmointikieleen pohjautuva kieli.  
   
 ### 3.1 Kehitysympäristön asennus  
   

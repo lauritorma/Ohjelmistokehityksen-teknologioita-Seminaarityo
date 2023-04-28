@@ -10,6 +10,17 @@ Työn tarkoituksena on toteuttaa yksi mahdollinen ratkaisu tarpeen täyttämisek
   
 Tavoitteena on, että käyttäjä pystyy eri komennoilla vastaanottamaan Telegram-botilta tietoa ilmanpaineesta, sekä lämpötilasta.  
   
+### Seminaarityössä käytettävät Tutoriaalit  
+
+Seminaarityössä toteutettava ohjelma perustuu artikkeliin  
+  
+Telegram: Control ESP32/ESP8266 Outputs (Arduino IDE). RandomNerdTutorials.com. Luettavissa: https://randomnerdtutorials.com/telegram-control-esp32-esp8266-nodemcu-outputs/  
+  
+Arduino IDE-kehitysympäristön / ESP32-kehitysalustan asennusohjeet perustuvat artikkeliin  
+  
+Installing ESP32 Board in Arduino IDE 2.0 (Windows, Mac OS X, Linux). RandomNerdTutorials.com. Luettavissa: https://randomnerdtutorials.com/installing-esp32-arduino-ide-2-0/#:~:text=To%20install%20the%20ESP32%20board%20in%20your%20Arduino,the%20install%20button%20for%20esp32%20by%20Espressif%20Systems.  
+  
+
 ## 2 Käytettävät teknologiat  
   
 Työ toteutetaan käyttäen seuraavia välineitä:  

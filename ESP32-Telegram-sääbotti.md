@@ -1,5 +1,5 @@
 # Telegram-sääbotti ESP32-mikrokontrollerilla  
-  
+ 
 ## 1 Johdanto  
   
 Tämä seminaarityö perustuu pohjimmiltaan käyttäjän tarpeeseen:  
@@ -101,7 +101,7 @@ Kirjoitetaan hakukenttään *esp32* ja asennetaan.
   
 Nyt kehitysympäristöön on asennettu tuki ESP32-mikrokontrollerille ja on mahdollista alkaa toteuttamaan ohjelmaa.  
   
-## 4 Telegram-botin luominen  
+## 5 Telegram-botin luominen  
   
 Seuraavaksi tarvitsemme uuden Telegram-botin, jonka voimme yhdistää ohjelmaan.  
   
@@ -117,7 +117,9 @@ Lisäksi botille tarvitsee antaa käyttäjänimi, jonka täytyy päättyä sanaa
   
 ![image](https://user-images.githubusercontent.com/90974678/235256221-5bac9d32-cf0c-4a50-9c61-af15c76b2fcd.png)
   
-BotFather luo uuden botin. Botille luodaan *token*, jolla bottiin voidaan ottaa yhteys koodissa. Token on henkilökohtainen ja väärinkäytösten estämiseksi sitä ei saa jakaa julkisesti muille.
+BotFather luo uuden botin. Botille luodaan *token*, jolla bottiin voidaan ottaa yhteys koodissa. Token on henkilökohtainen ja väärinkäytösten estämiseksi sitä ei saa jakaa julkisesti muille.  
+  
+Botti on valmis käytettäväksi.  
 
   
 

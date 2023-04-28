@@ -91,6 +91,17 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
   
 Jonka jälkeen OK.  
   
+Siirrytään ikkunan yläreunasta *Tools -> Boards Manager*  
+  
+![image](https://user-images.githubusercontent.com/90974678/235241903-1e4bf809-f7d1-4d22-ab4c-cd12829ff18e.png)  
+  
+Kirjoitetaan hakukenttään *esp32* ja asennetaan.  
+  
+![image](https://user-images.githubusercontent.com/90974678/235242551-4a60ba9c-84e7-4f97-8306-be71f48ef6fc.png)
+  
+Nyt kehitysympäristöön on asennettu tuki ESP32-mikrokontrollerille ja on mahdollista alkaa toteuttamaan ohjelmaa.  
+  
+## 4
 
   
 

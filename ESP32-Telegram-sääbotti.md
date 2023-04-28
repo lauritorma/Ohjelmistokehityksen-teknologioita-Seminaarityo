@@ -12,7 +12,7 @@ Tavoitteena on, että käyttäjä pystyy eri komennoilla vastaanottamaan Telegra
   
 ### Seminaarityössä käytettävät Tutoriaalit  
 
-Seminaarityössä toteutettava Telegram-botti perustuu artikkeliin
+Seminaarityössä toteutettava ohjelma perustuu artikkeliin
   
 Telegram: Control ESP32/ESP8266 Outputs (Arduino IDE). RandomNerdTutorials.com. Luettavissa: https://randomnerdtutorials.com/telegram-control-esp32-esp8266-nodemcu-outputs/  
   
@@ -109,7 +109,7 @@ Telegram-botteja on mahdollista luoda käyttäen Telegramista valmiiksi löytyv�
   
 ![image](https://user-images.githubusercontent.com/90974678/235255373-b6622175-8095-47aa-9a38-688470402d3a.png)
   
-Uuden botin luominen onnistuu antamalla BotFatherille komento ```/newbot```  
+Uuden botin luominen onnistuu ensin käynnistämällä BotFather komennolla ```/start``` ja sitten antamalla komento ```/newbot```  
   
 BotFather pyytää antamaan botille nimen. Tässä tapauksessa annetaan botille vaikkapa nimi *WeatherBot*  
   

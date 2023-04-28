@@ -109,7 +109,7 @@ Telegram-botteja on mahdollista luoda käyttäen Telegramista valmiiksi löytyv�
   
 ![image](https://user-images.githubusercontent.com/90974678/235255373-b6622175-8095-47aa-9a38-688470402d3a.png)
   
-Uuden botin luominen onnistuu ensin käynnistämällä BotFather komennolla ```/start``` ja sitten antamalla komento ```/newbot```  
+Uuden botin luominen onnistuu käynnistämällä BotFather komennolla ```/start``` ja sitten antamalla komento ```/newbot```  
   
 BotFather pyytää antamaan botille nimen. Tässä tapauksessa annetaan botille vaikkapa nimi *WeatherBot*  
   

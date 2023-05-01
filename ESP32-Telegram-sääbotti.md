@@ -38,13 +38,14 @@ Työ toteutetaan käyttäen seuraavia välineitä:
   
 * Koekytkentälevy  
 
-* X Uros-Uros hyppylanka
-* X Uros-Naaras hyppylanka
+* 4 kpl Uros-Uros hyppylankaa
+* 4 kpl Uros-Naaras hyppylanka
   
-### 2.2 Ohjelmisto
+### 2.2 Ohjelmistot
   
 * Arduino IDE 1.8.19  
-* Telegram BotFather  
+* Telegram BotFather
+* Telegram IDBot  
 
 ## 3 Arduino IDE  
   
@@ -333,7 +334,7 @@ void loop() {
   
 #### Verkkoyhteys 
   
-ESP32-tarvitsee tietojen lähettämistä varten verkkoyhteyden, joten koodiin tarvitsee asettaa toimivan tukiaseman tiedot.  
+ESP32-tarvitsee tietojen lähettämistä varten verkkoyhteyden, joten koodiin tulee asettaa toimivan tukiaseman tiedot.  
 
 ``` 
 // Replace with your network credentials

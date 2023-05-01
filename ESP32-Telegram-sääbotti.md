@@ -354,6 +354,11 @@ Aiemmin hankitut BotToken ja Chat-ID tulee myös asettaa koodiin.
 ```  
 On myös tärkeää huolehtia, etteivät nämä henkilökohtaiset tiedot päädy julkisesti näkyville esimerkiksi Git-versionhallinnassa.  
   
+## 6 Laitteen kokoaminen  
+  
+Jotta toteutettu ohjelma voidaan saada toimivaksi, tarvitaan tietysti laite, johon ohjelma ladataan.  
+  
+
 
   
 

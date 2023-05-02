@@ -1,4 +1,29 @@
 # Telegram-sääbotti ESP32-mikrokontrollerilla  
+  
+## Sisällysluettelo
+  * [1 Johdanto](#1-johdanto)
+    + [Seminaarityössä käytettävät Tutoriaalit](#seminaarityössä-käytettävät-tutoriaalit)
+  * [2 Käytettävät teknologiat](#2-käytettävät-teknologiat)
+    + [2.1 Rauta](#21-rauta)
+    + [2.2 Ohjelmistot](#22-ohjelmistot)
+  * [3 Arduino IDE](#3-arduino-ide)
+    + [3.1 Kehitysympäristön asennus](#31-kehitysympäristön-asennus)
+    + [3.2 Kehitysympäristön perusteet](#32-kehitysympäristön-perusteet)
+    + [3.3 ESP32-tuen asennus kehitysympäristöön](#33-esp32-tuen-asennus-kehitysympäristöön)
+  * [4 Telegram-botin luominen](#4-telegram-botin-luominen)
+    + [4.1 BotFather](#41-botfather)
+    + [4.2 IDBot](#42-idbot)
+  * [5 Ohjelman toteuttaminen](#5-ohjelman-toteuttaminen)
+    + [5.1 Kirjastot](#51-kirjastot)
+    + [5.2 Koodi](#52-koodi)
+    + [5.3 Tärkeitä kohtia koodissa](#53-tärkeitä-kohtia-koodissa)
+  * [6 Härveli / Vempele / Laite](#6-härveli--vempele--laite)
+    + [6.1 Komponentteja ja Merkintöjä](#61-komponentteja-ja-merkintöjä)
+    + [6.2 Kokoaminen](#62-kokoaminen)
+  * [7 Koodin lataaminen ESP32-mikrokontrolleriin ja botin käynnistys](#7-koodin-lataaminen-esp32-mikrokontrolleriin-ja-botin-käynnistys)
+    + [7.1 Koodin lataaminen](#71-koodin-lataaminen)
+    + [7.2 Telegram-botin käynnistys](#72-telegram-botin-käynnistys)
+  * [8 Yhteenveto](#8-yhteenveto)
  
 ## 1 Johdanto  
   
@@ -143,7 +168,7 @@ Käyttäjä-ID on luonnollisesti henkilökohtainen ja sitä ei tule jakaa muille
   
 Tässä seminaarityössä ei opeteta kohta kohdalta miten ohjelmoidaan itse ohjelma, joka kommunikoi ESP32-mikrokontrollerin ja Telegramin kanssa. Sen sijaan työssä käytetään valmista RandomNerdTutorials.com sivustolta löytyvää koodia, jota on muokattu niin, että botti toimii halutulla tavalla ja esitellään koodin oleellisia kohtia.  
   
-### 5.1 Tarvittavat kirjastot  
+### 5.1 Kirjastot  
   
 Ohjelman toimimiseksi tarvitsee ensin asentaa muutama kirjasto. Kirjastoja pystyy Arduino IDE:ssä asentamaan siirtymällä yläpalkista *Tools -> Manage libraries*, jolloin aukeaa *Library Manager*  
   
@@ -151,7 +176,7 @@ Ohjelman toimimiseksi tarvitsee ensin asentaa muutama kirjasto. Kirjastoja pysty
   
 Kirjastojen asentaminen onnistuu etsimällä haluttua kirjastoa hakupalkista ja klikkaamalla *Install*.  
   
-#### Asennettavat kirjastot  
+#### Kirjastot  
   
 * UniversalTelegramBot
   
@@ -453,7 +478,42 @@ ESP32-mikrokontrolleriin pitäisi tietokoneeseen yhdistäessä syttyä pieni LED
   
 ## 7 Koodin lataaminen ESP32-mikrokontrolleriin ja botin käynnistys  
   
+### 7.1 Koodin lataaminen  
+  
+Nyt kun koottu laite on yhdistetty tietokoneeseen, on aika ladata sille koodi.  
+  
+Koodin lataaminen onnistuu Arduino IDE:ssä klikkaamalla yläreunasta *Upload*-painiketta.  
 
+![image](https://user-images.githubusercontent.com/90974678/235755783-a588d101-1c09-4333-9b4d-0cec7dc22c3c.png)
+  
+Ikkunan alareunaan ilmestyy latauspalkki. Koodin latauksessa saattaa kestää jonkin aikaa.  
+  
+![image](https://user-images.githubusercontent.com/90974678/235756384-8feef239-e4c0-4f8a-8066-0c112a40e6b5.png)  
+  
+Kun koodi on ladattu laitteeseen, laite käynnistyy ja alkaa keräämään tietoa lämpötilasta sekä ilmanpaineesta.
+
+### 7.2 Telegram-botin käynnistys  
+  
+Nyt kun laite kerää säätietoja, voimme pyytää niitä aiemmin luodulta Telegram-botilta. 
+
+![image](https://user-images.githubusercontent.com/90974678/235757478-01fd4e90-5ec4-439d-bf20-9053b57345d6.png)  
+  
+Käynnistetään botti komennolla ```/start```.  
+  
+Botti käynnistyy ja kaikeksi iloksi on valmiina antamaan reaaliaikaista tietoa ilmanpaineesta ja lämpötilasta!  
+  
+![image](https://user-images.githubusercontent.com/90974678/235757922-44709168-9a10-489c-a7ce-8d5fd0154171.png)  
+  
+Testataan toimintaa vielä älypuhelimella  
+  
+![Screenshot_2023-05-02-21-52-29-39_948cd9899890cbd5c2798760b2b95377](https://user-images.githubusercontent.com/90974678/235758917-a15aed7a-bc52-4c99-b93f-51152c76c280.jpg)
+
+  
+## 8 Yhteenveto  
+  
+Tämän seminaarityön tavoitteena oli esitellä yksi mahdollinen ratkaisu käyttäjän tarpeeseen saada älypuhelimeen reaaliaikaista tietoa ilmanpaineesta ja lämpötilasta. Työ toteutettiin hyödyntäen ESP32-mikrokontrolleria, joka ohjelmoitiin lähettämään Telegram-botille tietoja, jotka se vastaanottaa BMP280 ilmanpaine ja lämpötila-sensorilta.  
+  
+Seminaarityö auttoi minua syventämään osaamistani teknologioista, joiden kanssa työskentelin osallistuessani International IT-seminar kurssille keväällä 2023. Opin kuinka erilaisilla sensoreilla kuten BMP280 voidaan kerätä tietoa ja kuinka esittää kerättyä tietoa Internetissä. Lisäksi syvensin osaamistani Telegram-bottien toteuttamisessa.
 
 
 

@@ -150,7 +150,7 @@ Lisäksi botille tarvitsee antaa käyttäjänimi, jonka täytyy päättyä sanaa
   
 BotFather luo uuden botin. Botille luodaan *token*, jolla bottiin voidaan ottaa yhteys koodissa. Token on henkilökohtainen ja väärinkäytösten estämiseksi sitä ei saa jakaa julkisesti muille.  
   
-Botti on valmis käytettäväksi.  
+Botti on valmis käytettäväksi koodissa.  
   
 ### 4.2 IDBot  
   

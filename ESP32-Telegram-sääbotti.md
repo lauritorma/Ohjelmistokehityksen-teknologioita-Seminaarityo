@@ -37,6 +37,9 @@ Työ toteutetaan käyttäen seuraavia välineitä:
 ![image](https://user-images.githubusercontent.com/90974678/235227393-d79af9fc-607f-41e7-aa45-0c386da9636f.png)  
   
 * Koekytkentälevy  
+  
+![IMG_20230501_224415](https://user-images.githubusercontent.com/90974678/235737175-3e6f76bd-0689-4191-93d2-a87e5f150fda.jpg)
+
 
 * 4 kpl Uros-Uros hyppylankaa
 * 4 kpl Uros-Naaras hyppylanka
@@ -354,15 +357,103 @@ Aiemmin hankitut BotToken ja Chat-ID tulee myös asettaa koodiin.
 ```  
 On myös tärkeää huolehtia, etteivät nämä henkilökohtaiset tiedot päädy julkisesti näkyville esimerkiksi Git-versionhallinnassa.  
   
-## 6 Laitteen kokoaminen  
+## 6 Härveli / Vempele / Laite 
   
-Jotta toteutettu ohjelma voidaan saada toimivaksi, tarvitaan tietysti laite, johon ohjelma ladataan.  
+Jotta toteutettu ohjelma voidaan saada toimivaksi, tarvitaan laite, johon ohjelma ladataan. 
+  
+Käydään lyhyesti läpi, miten tarvittava laite voidaan koota.  
+  
+### 6.1 Komponentteja ja Merkintöjä  
+  
+#### Koekytkentälevy  
+  
+Koekytkentälevy, tai *"Breadboard"* on levy, jolla voidaan rakentaa ja testata erilaisia elektronisia piirejä.  
+  
+Koekytkentälevy on jaettu kahteen puoleen. Kummallakin puolella on rivejä, joiden reikiin voidaan asettaa komponentteja ilman juottamista ja reikiä yhdistävät useat metalliset johtimet, jotka mahdollistavat erilaisten kytkentöjen tekemisen. 
+
+![image](https://user-images.githubusercontent.com/90974678/235748811-70a7ca4b-2dbb-4b83-961c-238d4a8f835b.png)
+  
+(*kuva: Modified the breadboard created by https://openclipart.org/user-detail/oscillator)*
+  
+  
+#### BMP280  
+  
+BMP280 on ilmanpaine- ja lämpötilasensori jota voidaan käyttää yhdessä ESP32-mikrokontrollerin kanssa. 
+  
+BMP280-sensorista löytyy pinnejä, joiden merkinnät kertovat mitkä johdot halutaan kytkeä mihinkin.  
+  
+##### VCC / GND
+  
+VCC ja GND ovat virtapinnejä. Lyhyesti, VCC yhdistetään virtalähteen positiiviseen (+) napaan ja sillä saadaan sensoriin virtaa, kun taas GND tarkoittaa maadoitusta ja se yhdistetään negatiiviseen (-) napaan.  
+  
+##### SDA / SCL  
+  
+SDA ja SCL ovat pinnejä, jotka käyttävät I2C-protokollaa tiedonsiirtoon laitteiden välillä. SDA on lyhenne sanoista "Serial Data" ja sen tarkoitus on siirtää tietoa, kun taas SCL on lyhenne sanoista "Serial Clock" ja sen tarkoitus on synkronoida tiedonsiirto laitteiden välillä.  
+  
+  
+  
+Lisäksi sensorista löytyy CSB (Chip Select Bar) ja SDO (Serial Data Out) -pinnit, joita ei kuitenkaan tässä työssä tarvita.  
+  
+
+![IMG_20230501_224430](https://user-images.githubusercontent.com/90974678/235737324-14192f08-2983-4cfd-891e-133d51445104.jpg)
+  
+  
+#### ESP32  
+  
+ESP32 on *Espressif Systemsin* kehittämä mikrokontrolleri, jota voidaan käyttää esimerkiksi IoT (Internet of Things)-laitteiden kehityksessä.  
+  
+Mikrokontrollerista löytyy useita erilaisia pinnejä, joiden merkinnät niin ikään auttavat haluttujen kytkentöjen tekemisessä.  
+ 
+##### 3V3  
+  
+ESP32-mikrokontrollerista löytyy sekä *3.3*, että *5* voltin virtalähdöt. BMP280-sensori tarvitsee 3.3 voltin virran, joten tässä työssä käytetään sitä. 3v3-pinnistä kytketään johto koekytkentälevyyn, positiiviseen (+) napaan.  
+  
+##### GND  
+  
+ESP32:sta löytyy useampi GND-pinni, jotka tarkoittavat maadoitusta. Maadoituksesta kytketään johto koekytkentälevyyn, negatiiviseen (+) napaan samalle puolelle 3v3-johdon kanssa.  
+  
+##### G21 / G22  
+  
+G21 ja G22 ovat pinnejä, joita käytetään I2C-tiedonsiirtoon. Nämä pinnit toimivat siis yhdessä BMP280-sensorin kanssa. 
+  
+*G21* vastaa SDA-linjaa ja *G22* SCL-linjaa, joten ne halutaan yhdistää vierekkäin BMP280-sensorin vastaavien SDA ja SCL-linjojen kanssa.  
+  
+![image](https://user-images.githubusercontent.com/90974678/235737594-fc8e7fdb-8011-49c9-b998-e92b629b31a2.png)
+  
+  
+### 6.2 Kokoaminen  
+  
+Aloitetaan laitteen kokoaminen antamalla BMP280-sensorille virtaa.  
+  
+Kytketään ESP32-mikrokontrollerin *3v3*-pinni johdolla kiinni koekytkentälevyn positiiviseen napaan ja *GND*-pinni negatiiviseen napaan sen viereen. Ei ole oikeastaan väliä, vaikka johdot eivät olisi koekytkentälevyssä vierekkäin, mutta se on siistimpää ja selkeämpää.
+
+![image](https://user-images.githubusercontent.com/90974678/235737723-09380622-2ca2-4d28-ac35-c564f993f669.png)
+*(Punainen johto: 3v3, Valkoinen johto: GND)*
+  
+Seuraavaksi kytketään BMP280-sensorin VCC-pinni saman puolen virtakiskojen positiiviseen- ja GND-pinni negatiiviseen napaan.  
+  
+![image](https://user-images.githubusercontent.com/90974678/235737783-f6147b80-0aa6-4fe9-8d1c-0f56c7ecea8e.png)  
+*(Musta johto: VCC, Valkoinen johto: GND)*  
+  
+Kun BMP280-sensori saa virtaa, halutaan kytkeä sensorin SDA-pinni koekytkentälevyn reikään riville 21 ja SCL-pinni riville 22.  
+  
+![image](https://user-images.githubusercontent.com/90974678/235737836-cb03f54a-a76a-4258-9758-2bb7181da21c.png)  
+*(Vihreä johto: SCL, Musta johto: SDA)*
+  
+Lopuksi halutaan vielä kytkeä ESP32-mikrokontrollerista pinnit G21 ja G22 oikeille paikoilleen koekytkentälevyyn BMP280-sensorin SDA ja SCL-pinnien viereen.  
+  
+![image](https://user-images.githubusercontent.com/90974678/235738127-c05f8877-b385-4ad7-bd2c-27f63ceacafd.png)  
+*(Ruskeat johdot G21 SDA-johdon viereen ja G22 SCL-johdon viereen)*  
+  
+Kun laite on koottu, se yhdistetään ESP32:sta löytyvästä portista *Micro-USB*-johdolla tietokoneeseen.  
+  
+![image](https://user-images.githubusercontent.com/90974678/235754144-c07da56f-138a-4c9e-ae6d-e74d3613a8a1.png)  
+  
+ESP32-mikrokontrolleriin pitäisi tietokoneeseen yhdistäessä syttyä pieni LED-valo merkiksi siitä, että se saa virtaa.  
+  
+## 7 Koodin lataaminen ESP32-mikrokontrolleriin ja botin käynnistys  
   
 
 
-  
-
-
-  
 
 

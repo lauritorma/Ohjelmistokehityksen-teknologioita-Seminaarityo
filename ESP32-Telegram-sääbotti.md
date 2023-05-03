@@ -24,6 +24,7 @@
     + [7.1 Koodin lataaminen](#71-koodin-lataaminen)
     + [7.2 Telegram-botin käynnistys](#72-telegram-botin-käynnistys)
   * [8 Yhteenveto](#8-yhteenveto)
+  * [9 Video](#9-video)
  
 ## 1 Johdanto  
   
@@ -514,6 +515,10 @@ Testataan toimintaa vielä älypuhelimella
 Tämän seminaarityön tavoitteena oli esitellä yksi mahdollinen ratkaisu käyttäjän tarpeeseen saada älypuhelimeen reaaliaikaista tietoa ilmanpaineesta ja lämpötilasta. Työ toteutettiin hyödyntäen ESP32-mikrokontrolleria, joka ohjelmoitiin lähettämään Telegram-botille tietoja, jotka se vastaanottaa BMP280 ilmanpaine ja lämpötila-sensorilta.  
   
 Seminaarityö auttoi minua syventämään osaamistani teknologioista, joiden kanssa työskentelin osallistuessani International IT-seminar kurssille keväällä 2023. Opin kuinka erilaisilla sensoreilla kuten BMP280 voidaan kerätä tietoa ja kuinka esittää kerättyä tietoa Internetissä. Lisäksi syvensin osaamistani Telegram-bottien toteuttamisessa. Kiinnostuin International IT-seminar kurssilla IoT-laitteista ja uskon, että tämä seminaarityö auttaa minua tulevaisuudessa jatkamaan haastavampien IoT-laitteiden toteuttamista.  
+  
+## 9 Video  
+  
+Linkki videoon seminaarityön teknisestä toteutuksesta: https://www.youtube.com/watch?v=PneckDcxS24
 
 
 
